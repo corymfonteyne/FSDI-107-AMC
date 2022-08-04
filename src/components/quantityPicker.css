@@ -1,5 +1,6 @@
 .quantity-picker{
-    border-top: 2px solid blueviolet;
+    border-top: 3px solid blueviolet;
     text-align: center;
     padding-top: 2px;
+    padding-bottom: 3px;
 }

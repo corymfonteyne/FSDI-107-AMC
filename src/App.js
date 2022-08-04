@@ -2,8 +2,8 @@
 import "./App.css";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
-import QuantityPicker from "./components/quantityPicker";
-
+import AboutMe from "./components/aboutMe";
+import Catalog from "./components/catalog";
 
 
 function App() {
@@ -13,9 +13,15 @@ function App() {
 
       <h1>Arbor Mill Customs</h1>
 
-      <div className="quantity-picker">
-        <QuantityPicker></QuantityPicker>
+
+      <div className="about-me">
+        <AboutMe></AboutMe>
       </div>
+
+      <div className="catalog">
+        <Catalog></Catalog>
+      </div>
+
 
       <Footer></Footer>
     </div>
