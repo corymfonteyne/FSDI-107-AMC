@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
+    
 
       <h1>Arbor Mill Customs</h1>
 
