@@ -4,6 +4,8 @@ import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import AboutMe from "./components/aboutMe";
 import Catalog from "./components/catalog";
+import ShoppingList from "./components/shoppingList";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
@@ -26,6 +28,9 @@ function App() {
         <Catalog></Catalog>
       </div>
 
+    <div className="shop-list">
+      <ShoppingList></ShoppingList>
+    </div>
 
       <Footer></Footer>
     </div>
