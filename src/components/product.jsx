@@ -2,18 +2,39 @@
 
 import "./product.css";
 import QuantityPicker from "./quantityPicker";
+import { useState } from "react";
 
 const Product = (props) => {
+    const [quantity, setQuantity] = useState(1);
+
+    const add2Cart = () => {
+        console.log(props.data.title);
+    };
+
+    const onQuantityChange = () => {
+        setQuantity(quantity);
+    };
+
+    const getTotal = () => {
+        let total = quantity * props.data.price;
+        return total.toFixed(2);
+    };
+
     return (
         <div className="product">
             <img src ={"/images/" + props.data.image} alt="product" />
 
             <h3>{props.data.title}</h3>
 
-            <label><b>Price:</b> {props.data.price.toFixed(2)}</label>
-            <label><b>Total:</b> {props.data.price.toFixed(2)}</label>
+            <div className="prices">
+                <label className="total">Total: ${getTotal()}</label>
+                <label className="price">Price: ${props.data.price.toFixed(2)}</label>
+            </div>
 
-            <QuantityPicker></QuantityPicker>
+            <div className="controls">
+                <QuantityPicker onChange={onQuantityChange} />
+                <button onClick={add2Cart} className="btn btn-sm btn-success">Add</button>
+            </div>
 
         </div>
     );

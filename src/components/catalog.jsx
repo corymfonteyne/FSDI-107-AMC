@@ -46,7 +46,7 @@ const Catalog = () =>{
             
             <div className="product-list">
                 {products.map((prod) => (
-                    <Product data={prod}></Product>
+                    <Product key={prod._id} data={prod}></Product>
                 ))}
             </div>
 

@@ -3,28 +3,31 @@
 import "./quantityPicker.css";
 import {useState} from "react";
 
-const QuantityPicker = () => {
+const QuantityPicker = (props) => {
         const [quantity, setQuantity] = useState(1);
 
     const increase = () => {
         console.log('click on react');
-
         //quantity = 100; never do this!!
         let next = quantity + 1;
         setQuantity(next);
+        props.onChange(next);
     };
+
     const decrease = () => {
         console.log('click on react');
-        let previous = quantity - 1;
-        if(previous > 0)
-        setQuantity(previous);
+        let next = quantity - 1;
+        if(next > 0) {
+            setQuantity(next);
+            props.onChange(next)
+        }
     };
 
     return (
     <div className="quantity-picker"> 
-        <button onClick={decrease}>-</button>
+        <button className="btn btn-sm btn-info" onClick={decrease}>-</button>
         <label>{quantity}</label>
-        <button onClick={increase}>+</button>
+        <button className="btn btn-sm btn-info" onClick={increase}>+</button>
     </div>
     );
 };

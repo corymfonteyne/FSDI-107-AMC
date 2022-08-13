@@ -28,9 +28,9 @@ function App() {
         <Catalog></Catalog>
       </div>
 
-    <div className="shop-list">
+      <div className="shop-list">
       <ShoppingList></ShoppingList>
-    </div>
+      </div>
 
       <Footer></Footer>
     </div>
