@@ -5,37 +5,39 @@ import Footer from "./components/footer";
 import AboutMe from "./components/aboutMe";
 import Catalog from "./components/catalog";
 import ShoppingList from "./components/shoppingList";
+import Home from "./components/home";
+import Cart from "./components/cart";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-    
+      <BrowserRouter>
 
-      <h1>Arbor Mill Customs</h1>
+        <NavBar></NavBar>
+      
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/list" element={<ShoppingList />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
 
+        <Footer></Footer>
 
-      <div className="about-me">
-        <AboutMe></AboutMe>
-      </div>
-
-      <div className="catalog">
-        <Catalog></Catalog>
-      </div>
-
-      <div className="shop-list">
-      <ShoppingList></ShoppingList>
-      </div>
-
-      <Footer></Footer>
+      </BrowserRouter>
     </div>
-  
   );
 }
+
+      
+  
 
 export default App;
