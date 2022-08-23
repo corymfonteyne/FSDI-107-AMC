@@ -2,14 +2,18 @@
 
 import "./home.css";
 import {Link} from "react-router-dom";
-import {Image} from "Artboard9.png";
+
 
 
 const Home = () => {
     return (
         <div className="home">
-            <h1>Arbor Mill Customs!</h1>
-            <Image source={require("./images/Artboard.png")} />
+            <h1>Arbor Mill Customs</h1>
+
+            <div>
+            <img src ="/images/Artboard9.png"  alt="logo" />
+            </div>
+
             <h4>North Berwick, ME</h4>
             <h5>(603) 969-4578</h5>
 

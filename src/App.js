@@ -7,6 +7,7 @@ import Catalog from "./components/catalog";
 import ShoppingList from "./components/shoppingList";
 import Home from "./components/home";
 import Cart from "./components/cart";
+import Admin from "./components/admin";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<AboutMe />} />
           <Route path="/list" element={<ShoppingList />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
 
         <Footer></Footer>

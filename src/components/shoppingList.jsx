@@ -13,7 +13,9 @@ const ShoppingList = () => {
     const save = () => {
         console.log(text);
 
-        items.push(text);
+        let clone = [...items];
+        clone.push(text);
+        setItems(clone);
     };
 
     const textChange = (e) => {
