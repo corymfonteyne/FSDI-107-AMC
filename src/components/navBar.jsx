@@ -2,8 +2,11 @@
 
 import "./navBar.css";
 import {Link} from "react-router-dom"
+import { useContext } from "react";
+import StoreContext from "../store/storeContext";
 
 const NavBar = () => {
+ let cart = useContext(StoreContext).cart;
     return (
         <div className="NavBar">
 
@@ -47,7 +50,7 @@ const NavBar = () => {
             </ul>
             <form className="d-flex" role="search">
               <Link className="btn btn-lg" to="/cart">
-                Cart
+                {cart.length} &nbsp; Cart
               </Link>
             </form>
             </div>
