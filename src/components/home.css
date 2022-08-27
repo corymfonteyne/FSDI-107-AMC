@@ -1,9 +1,12 @@
 .home{
     padding: 10px;
     margin: 10px;
-    background-color: rgb(32, 136, 18);
+    background-color: rgb(10, 61, 3);
 }
 img{
     width: 90%;;
+}
+h1{
+    color: rgb(229, 231, 216);
 }
     

@@ -11,7 +11,9 @@ const Product = (props) => {
 
     const handleAddClicked = () => {
         console.log(props.data.title);
-        addToCart(props.data);
+
+        let prodForCart = {...props.data, quantity: quantity};
+        addToCart(prodForCart);
     };
 
     const onQuantityChange = (quantity) => {

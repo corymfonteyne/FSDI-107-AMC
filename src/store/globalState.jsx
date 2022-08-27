@@ -9,10 +9,20 @@ const GlobalState = (props)  => {
     const addToCart = (prod) => {
         console.log("Adding to cart");
 
-        // add prod to the cart
-        // create a copy, mod copy, set the copy
         let copy = [...cart];
+
+        let exist = false;
+        for (let i = 0; i < cart.length; i++) {
+            let item = cart[i];
+            if(item._id === prod._id) {
+                exist = true;
+                item.quantity = prod.quantity;
+        }
+    }
+    if(!exist) {
         copy.push(prod);
+    }
+
         setCart(copy);
     };
     const removeFromCart = () => {};

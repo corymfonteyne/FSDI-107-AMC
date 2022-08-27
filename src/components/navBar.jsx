@@ -6,7 +6,18 @@ import { useContext } from "react";
 import StoreContext from "../store/storeContext";
 
 const NavBar = () => {
- let cart = useContext(StoreContext).cart;
+ const cart = useContext(StoreContext).cart;
+
+const getNumItems  = () => {
+  let sum  = 0;
+  // count the number of products in cart array
+  for (let i = 0; i < cart.length; i++) {
+    let prod = cart[i];
+    sum += prod.quantity;
+  }
+  return sum;
+};
+
     return (
         <div className="NavBar">
 
@@ -50,7 +61,7 @@ const NavBar = () => {
             </ul>
             <form className="d-flex" role="search">
               <Link className="btn btn-lg" to="/cart">
-                {cart.length} &nbsp; Cart
+                {getNumItems(cart)} &nbsp; Cart
               </Link>
             </form>
             </div>
