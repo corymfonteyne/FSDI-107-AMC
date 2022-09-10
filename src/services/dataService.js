@@ -1,3 +1,4 @@
+import axios from "axios";
 
 const catalog = [
     {
@@ -53,12 +54,17 @@ const catalog = [
 
 class DataService {
 
-    getCatalog() {
-        //calll the server
+    async getCatalog() {
+        //call the server
         //get the list of products and return it 
-
-        return catalog;
+        let res = await axios.get("http://127.0.0.1:5000/api/catalog");
+        return res.data;
+        // return catalog;
+    }
+    async saveProduct(prod){
+        let res = await axios.post("http://127.0.0.1:5000/api/catalog", prod);
+        return res.data;
     }
 }
 
-export default DataService 
+export default DataService; 
